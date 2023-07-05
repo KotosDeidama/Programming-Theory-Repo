@@ -1,23 +1,21 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UIElements;
 
 public class PlayerController : MonoBehaviour
 {
-    [Range(0,2000)]
-    [SerializeField] private float acceleration = 1f;
-
-    [Range(0,50)]
-    [SerializeField] private float torque_acc = 0.5f;
+    private float acceleration = 110f;
+    private float torque_acc = 10f;
 
     private Rigidbody2D playerRB;
+    public GameObject missile;
     
     // Start is called before the first frame update
     void Start()
     {
         playerRB = GetComponent<Rigidbody2D>();
-       
     }
 
     // Update is called once per frame
@@ -25,6 +23,7 @@ public class PlayerController : MonoBehaviour
     {
         Movement();
         BoundaryControl();
+        Shot();
     }
 
     private void Movement()
@@ -73,6 +72,14 @@ public class PlayerController : MonoBehaviour
         else if (transform.position.y < -5)
         {
             transform.position = new Vector3(transform.position.x, 5 ,0);
+        }
+    }
+
+    private void Shot()
+    {
+        if (Input.GetKeyDown(KeyCode.Space) )
+        {
+            Instantiate(missile, transform.position, transform.rotation);
         }
     }
 }
