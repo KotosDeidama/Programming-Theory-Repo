@@ -28,21 +28,21 @@ public class PlayerController : MonoBehaviour
 
     private void Movement()
     {
-        if (Input.GetKey(KeyCode.W) && playerRB.velocity.magnitude < 5) 
+        if (Input.GetKey(KeyCode.UpArrow) && playerRB.velocity.magnitude < 5) 
         {
             playerRB.AddForce(transform.up * acceleration * Time.deltaTime);
 		
         }
-        if (Input.GetKey(KeyCode.S) && playerRB.velocity.magnitude < 5) 
+        if (Input.GetKey(KeyCode.DownArrow) && playerRB.velocity.magnitude < 5) 
         {
             playerRB.AddForce((-transform.up) * acceleration * Time.deltaTime);
 			
         }
-        if (Input.GetKey(KeyCode.D) &&  playerRB.totalTorque < 2) {
+        if (Input.GetKey(KeyCode.RightArrow) &&  playerRB.totalTorque < 2) {
             playerRB.AddTorque(-torque_acc  * Time.deltaTime);
 			
         }
-        if (Input.GetKey(KeyCode.A) && playerRB.totalTorque < 2)
+        if (Input.GetKey(KeyCode.LeftArrow) && playerRB.totalTorque < 2)
         {
             playerRB.AddTorque(torque_acc * Time.deltaTime);
         }
