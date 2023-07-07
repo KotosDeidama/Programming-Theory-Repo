@@ -175,6 +175,7 @@ MonoBehaviour:
   shoot_effect: {fileID: 100002, guid: 565cdc2ed7b030a41accd8f00ae59a50, type: 3}
   hit_effect: {fileID: 100002, guid: cafecd3fc3b761c45bb1553f35cf5c96, type: 3}
   firing_ship: {fileID: 0}
+  missileSpeed: 3175
 --- !u!96 &9600000
 TrailRenderer:
   serializedVersion: 3
@@ -217,7 +218,7 @@ TrailRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Time: 6
+  m_Time: 0.3
   m_PreviewTimeScale: 1
   m_Parameters:
     serializedVersion: 3
