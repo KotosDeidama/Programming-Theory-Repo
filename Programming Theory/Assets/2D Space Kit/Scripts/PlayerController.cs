@@ -4,7 +4,7 @@ using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UIElements;
 
-public class PlayerController : MonoBehaviour
+public class PlayerController : NPCManager
 {
     private float acceleration = 110f;
     private float torque_acc = 10f;
@@ -16,13 +16,14 @@ public class PlayerController : MonoBehaviour
     void Start()
     {
         playerRB = GetComponent<Rigidbody2D>();
+        
     }
 
     // Update is called once per frame
     void Update()
     {
-        Movement();
-        BoundaryControl();
+        Movement(); 
+        BoundaryControl(); 
         Shot();
     }
 

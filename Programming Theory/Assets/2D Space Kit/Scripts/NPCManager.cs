@@ -1,16 +1,23 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 
-public class Boundary : MonoBehaviour
+public class NPCManager : MonoBehaviour
 {
+
+    // Start is called before the first frame update
+    void Start()
+    {
+        
+    }
+
     // Update is called once per frame
     void Update()
     {
-        BoundaryControl();
+        
     }
-    
-    private void BoundaryControl()
+    protected void BoundaryControl()
     {
         if (transform.position.x > 9)
         {
@@ -30,4 +37,5 @@ public class Boundary : MonoBehaviour
             transform.position = new Vector3(transform.position.x, 5 ,0);
         }
     }
+    
 }
