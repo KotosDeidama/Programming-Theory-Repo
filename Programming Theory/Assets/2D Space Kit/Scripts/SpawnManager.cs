@@ -51,7 +51,7 @@ public class SpawnManager : MonoBehaviour
             yield return new WaitForSeconds(spawnTime);
         }
 
-        if (waveNum > 0)
+        if (waveNum > 3)
         {
             for (int i = 0; i < waveNum; i++)
             {
